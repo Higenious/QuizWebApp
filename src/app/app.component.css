@@ -1,0 +1,14 @@
+.nav-link{
+    color:white;
+    font-size: 15px;
+    font-size: 110%;
+}
+
+.navbar.navbar-expand-lg  {
+    background-color: #5f4c4c;
+}
+.navbar-brand{
+    color: white;
+    font-size: 15px;
+    font-size: 110%;
+}
