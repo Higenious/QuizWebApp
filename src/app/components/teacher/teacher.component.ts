@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teacher.component.css']
 })
 export class TeacherComponent implements OnInit {
-
+  openform:any;
+  nextForm:any;
+  Quiz: any = {};
+  obj:any;
   constructor() { }
 
   ngOnInit() {
@@ -14,6 +17,22 @@ export class TeacherComponent implements OnInit {
 
 
   createQ(){
-    alert('created quize');
+    this.openform=true;  
+    return this.openform; 
+  }
+
+  
+  addQuestions(Quiz){
+   console.log('questions are', Quiz);
+  }
+  
+  next(){
+   this.openform = false;
+   this.nextForm = true;
+   alert('done');
+  }
+  
+  reset(){
+    
   }
 }

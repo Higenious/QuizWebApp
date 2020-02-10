@@ -1,4 +1,55 @@
-<p style="margin-top: 50px;">Click below to Create Quuiz!</p>
+<p  [hidden]="openform" style="margin-top: 50px;">Click below to Create Quuiz!</p>
 
 
-<button type="button" class="btn btn-primary" (click)='createQ()'> Create Quiz</button>
+<button type="button" [hidden]="openform" class="btn btn-primary" (click)='createQ()'> Create Quiz</button>
+
+
+<!--  Form For Create Quize  -->
+<form style="margin-top: 50px;"  [hidden]="!openform">    
+            <div class="form-example">
+                   <label for="name">Enter Quiz Name: </label>         
+                  <input  type="text" name="title" [(ngModel)]="Quiz.name" required>        
+            </div>  
+          <div class="form-example">
+                   <label for="subject">Enter subject for Quiz: </label>
+                   <input type="text"  name="subject" [(ngModel)]="Quiz.subject" required>        
+          </div> 
+           <div class="form-example">
+                    <label for="timestamp">Enter time for Quiz: </label>          
+                  <input type="text" name="timestamp" [(ngModel)]="Quiz.timestamp" required>          
+          </div> 
+                  <div class="form-example">
+           
+                     <button type="button" class="btn btn-primary" (click)= "addQuestions(Quiz)">Add Questions</button>     
+                <button type="button" class="btn btn-primary" (click)="next()">Next</button>   
+         </div>
+</form>
+
+
+<!-- Form For Adding Questions in Quiz -->
+<form style="margin-top: 50px;"  [hidden]="!nextForm">    
+        <div class="form-example">
+               <label for="name">Q id: </label>         
+              <input  type="text" name="title" [(ngModel)]="Quiz.name" required>        
+        </div>  
+      <div class="form-example">
+               <label for="subject">Q Name: </label>
+               <input type="text"   name="subject" [(ngModel)]="Quiz.subject" required>        
+      </div> 
+       <div class="form-example">
+                <label for="timestamp">Q Type Id: </label>          
+              <input type="text" name="timestamp" [(ngModel)]="Quiz.timestamp" required>          
+      </div> 
+
+      <div>
+                <label for="timestamp">Options: </label>          
+        
+
+
+      </div>
+              <div class="form-example">
+       
+              <button type="button" class="btn btn-primary" (click)="next()">Next</button>     
+              <button type="button" class="btn btn-info" (click)="reset()">resset</button>   
+     </div>
+</form>
